@@ -10,6 +10,7 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+
 - task: SonarQubePrepare@4
   inputs:
     SonarQube: 'test_code_scan'
@@ -24,7 +25,6 @@ steps:
     sonarQubeRunAnalysis: true
     sqGradlePluginVersionChoice: 'specify'
     sonarQubeGradlePluginVersion: '2.6.1'
-- task: SonarQubeAnalyze@4
 - task: SonarQubePublish@4
   inputs:
     pollingTimeoutSec: '300'
